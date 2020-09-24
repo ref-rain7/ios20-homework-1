@@ -13,7 +13,26 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-
+    
+    var powerOn = false
+    @IBOutlet var screenTorchView: UIView!
+    @IBOutlet weak var powerButton: UIButton!
+    @IBOutlet weak var powerLabel: UILabel!
+    
+    @IBAction func powerBtnToggled() {
+        powerOn = !powerOn
+        if powerOn {
+            screenTorchView.backgroundColor = UIColor.white
+            powerButton.tintColor = UIColor.systemGray
+            powerLabel.text = "OFF"
+            powerLabel.textColor = UIColor.black
+        } else {
+            screenTorchView.backgroundColor = UIColor.black
+            powerButton.tintColor = UIColor.systemYellow
+            powerLabel.text = "ON"
+            powerLabel.textColor = UIColor.systemOrange
+        }
+    }
+    
 }
 
